@@ -28,7 +28,7 @@
 					name="teacher_Name" required="required" type="text"
 					class="form-control" id="teacher_Name">
 			</div>
-			<button type="submit" class="btn btn-primary">Add Student</button>
+			<button type="submit" class="btn btn-primary">Add Subject</button>
 		</form>
 	</div>
 </body>

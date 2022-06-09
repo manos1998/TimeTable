@@ -1,14 +1,21 @@
 package bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "Classes")
+@Table(name = "CLASSES")
 public class Classes {
 
 	@Id
-	@GeneratedValue
+	@Column(name = "ID", nullable = false)
+	@SequenceGenerator(name = "ID", sequenceName = "CLASSES_SEQ")
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator = "ID")
 	private long BatchId;
 	private String subjectId1;
 	private String subjectId2;

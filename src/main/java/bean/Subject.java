@@ -1,13 +1,21 @@
 package bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "Subject")
+@Table(name = "SUBJECT")
 public class Subject {
+
 	@Id
-	@GeneratedValue
+	@Column(name = "ID", nullable = false)
+	@SequenceGenerator(name = "ID", sequenceName = "SUBJECT_SEQ")
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator = "ID")
 	private long SubjectId;
 	private String SubjectName;
 	private String TeacherName;

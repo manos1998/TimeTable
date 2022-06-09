@@ -2,15 +2,22 @@ package bean;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
-public class Student implements Serializable {
+@Entity(name = "Student")
+@Table(name = "STUDENT")
+public class Student {
 	
 	@Id
-	@GeneratedValue
+	@Column(name = "ID", nullable = false)
+	@SequenceGenerator(name = "ID", sequenceName = "STUDENT_SEQ")
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator = "ID")
 	private long studentId;
 	private String name;
 	private String address;
